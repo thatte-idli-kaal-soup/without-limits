@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "College Women’s Ultimate Resources Manuals (in HTML)"
 theme = "mediumish-gohugo-theme"
 
+[params]
+  mailchimp = "https://team.us12.list-manage.com/subscribe/post?u=6924dc1ec08c42f12738d464c&amp;id=302d7832cf"
+  mailprotect = "b_6924dc1ec08c42f12738d464c_302d7832cf"
+
 [params.index]
   picture = "/images/cover.jpg"
   title = "College Women’s Ultimate Resources Manuals"
