@@ -1,4 +1,13 @@
-baseURL = "http://example.org/"
+baseURL = "https://without-limits.thatteidlikaalsoup.team/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "College Women’s Ultimate Resources Manuals (in HTML)"
 theme = "mediumish-gohugo-theme"
+
+[params.index]
+  picture = "/images/cover.jpg"
+  title = "College Women’s Ultimate Resources Manuals"
+  subtitle = "HTML versions of the articles in the Without Limits Ultimate Manuals"
+  mdtext = '''This website is an attempt to make it easier to link to specific articles, and to make it easier to read on mobile devices.
+  The original resources are available [here](http://withoutlimitsultimate.com/resources/)
+  '''
+  alertbar = true
