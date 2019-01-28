@@ -75,6 +75,7 @@ function fix_frontmatter () {
     if [ ! -z "${FIRST_IMAGE}" ]; then
         sed -i -e "s/^\(author: .*\)$/\1\nimage: \"essays\/${SLUG}\/${FIRST_IMAGE}\"/g" ${POST_PATH} |head
     fi
+    sed -i -e "s/^\(author: .*\)$/\1\ntags: []/g" ${POST_PATH} |head
 }
 
 echo $ESSAY_DIR
