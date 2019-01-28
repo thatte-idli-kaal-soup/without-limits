@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+ESSAY_DIR=$(dirname $0)/../essay-dir
+PDF_PATH=${1}
+PDF_NAME=$(basename ${PDF_PATH})
+
+PAGES=${2}
+
+ESSAY_PATH="${ESSAY_DIR}"/post.md
+CONTENT_DIR=$(dirname $0)/../content
+
+function clean_essay_text () {
+    # Get rid of page links
+    sed -i -r 's/\[\]\{#[0-9]+\}//g' "${ESSAY_PATH}"
+    # Get rid of page numbers
+    sed -i -r 's/^[0-9]+\\//g' "${ESSAY_PATH}"
+    # Get rid of "Without Limits"
+    sed -i -r 's/^Without Limits\\$//g' "${ESSAY_PATH}"
+    # Get rid of trailing back slashes
+    sed -i -r 's/\\$//g' "${ESSAY_PATH}"
+    # Get rid of ------- lines
+    sed -i -r 's/^-+$//g' "${ESSAY_PATH}"
+    # Get rid of empty new lines
+    sed -i -r '/^$/d' "${ESSAY_PATH}"
+}
+
+function get_title_and_author () {
+    echo "Getting title and author..."
+    echo "#############"
+    head -n 3 "${ESSAY_PATH}"
+    echo "#############"
+    read -p "Title spread across N lines: " -N 1
+    TITLE=$(head -n $REPLY "${ESSAY_PATH}"|tr -s "\n" " "|sed -e 's/"/\\\\"/g')
+    CONTENT_LINES=$((REPLY+2))
+    echo ${TITLE}
+    AUTHOR=$(tail -n +$((REPLY + 1)) "${ESSAY_PATH}"|head -n 1|sed -e 's/"/\\\\"/g')
+    echo ${AUTHOR}
+}
+
+function slugify () {
+    echo "Getting slug..."
+    # From https://codeselfstudy.com/blog/how-to-slugify-strings-in-bash/
+    SLUG=$(echo "${TITLE}" | sed -e 's/[^[:alnum:]]/-/g'| tr -s '-' | sed -e 's/-$//g' | tr A-Z a-z)
+}
+
+function new_post () {
+    echo "Creating new post..."
+    POST_DIR="${CONTENT_DIR}"/essays/"${SLUG}"/
+    POST_PATH="${POST_DIR}"/index.md
+    hugo new "${POST_PATH}"
+    tail -n +"${CONTENT_LINES}" "${ESSAY_PATH}" >> "${POST_PATH}"
+}
+
+function copy_images () {
+    echo "Copying images..."
+    cp "${ESSAY_DIR}"/*.jpg "${POST_DIR}" || true
+    first_image_name
+}
+
+function first_image_name () {
+    echo "Getting first image..."
+    FIRST_IMAGE=""
+    FIRST_IMAGE=$(ls -1 "${ESSAY_DIR}"/*.jpg|head -n 1 || echo "")
+    if [ ! -z ${FIRST_IMAGE} ]; then
+        FIRST_IMAGE=$(basename "${FIRST_IMAGE}")
+    fi
+}
+
+function fix_frontmatter () {
+    echo "Fixing frontmatter..."
+    sed -i -e "s/^\(title: \)\(.*\)$/\1\"${TITLE}\"/g" ${POST_PATH}
+    sed -i -e "s/^\(title: .*\)$/\1\nauthor: \"${AUTHOR}\"/g" ${POST_PATH} |head
+    if [ ! -z "${FIRST_IMAGE}" ]; then
+        sed -i -e "s/^\(author: .*\)$/\1\nimage: \"essays\/${SLUG}\/${FIRST_IMAGE}\"/g" ${POST_PATH} |head
+    fi
+}
+
+echo $ESSAY_DIR
+mkdir -p "${ESSAY_DIR}"
+cp "${PDF_PATH}" "${ESSAY_DIR}"/
+pushd "${ESSAY_DIR}"
+# Extract specified pages
+pdfjam -o post.pdf "${PDF_NAME}" ${PAGES}
+# Convert to html
+pdftohtml post.pdf
+popd
+
+# Convert to markdown
+pandoc -r html -w markdown "${ESSAY_DIR}"/posts.html -o "${ESSAY_PATH}" --wrap=preserve --ascii
+
+clean_essay_text
+get_title_and_author
+slugify
+new_post
+copy_images
+fix_frontmatter
