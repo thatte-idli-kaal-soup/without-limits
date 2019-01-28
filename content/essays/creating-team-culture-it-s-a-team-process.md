@@ -1,17 +1,15 @@
 ---
-title: "Creating Team Culture: It's a Team Process!"
-author: "Anraya Palmer"
-tags: []
-image: "images/creating-team-culture-it-s-a-team-process-post-3_1.jpg"
-date: 2019-01-28T17:04:14+05:30
-draft: true
+title: 'Creating Team Culture: It''s a Team Process!'
+date: 2019-01-28T11:34:14.000Z
+image: images/creating-team-culture-it-s-a-team-process-post-3_1.jpg
 ---
-
 What is team culture and why is it important? What are 
 some practical things we can do to develop team cul-
 ture and how do we incorporate everyone's input into 
 this process? How do we balance being the team we 
 are vs. being the team we want to be?
+
+
 A little known fact about me is that I am a huge sports buff. I've been around 
 sports since I was born and started playing shortly there after. I love watching sports; 
 I'll watch just about anything. My brain is full of random sports facts that typically 
@@ -42,7 +40,7 @@ I real y like this topic because I definitely identify as a true team player. I 
 willing to help, but most importantly, be supportive. As a team player, I completely believe 
 and trust my teams' systems. No matter what other roles I may take on within the team, I 
 always want being the best teammate possible to be my first role. 
-My club team, Atlanta Ozone, likes to say, *"Be generous with your teammates." *Being generous 
+My club team, Atlanta Ozone, likes to say, _"Be generous with your teammates." _Being generous 
 with your teammates means being willing to support and listen to them. Taking the time to 
 build relationships with your teammates. Going the extra mile to make sure we remember 
 we are a team and not just a bunch of individuals. I have a couple of practical things you can 
@@ -101,7 +99,7 @@ a cheer to bring the sideline energy up, it also reminds them that the team is m
 individuals, not just a few players. On Ozone we like to say, "Eat and Stay Hungry." It fires us 
 up, but it's a reminder that we aren't satisfied until we reach our goals. Some words or cheers 
 can also come from inside jokes or funny stories shared by the team. Ozone gets really hyped 
-talking about carrots\...don't ask.
+talking about carrots...don't ask.
 **Team We Are Vs. Team We Want To Be**
 Turnover on a team from year to year is bound to happen. Sometimes you lose one player, 
 sometimes a large graduating class. Sometimes you may have issues during the season that 
@@ -114,30 +112,31 @@ you getting away from team values? Are you making sure everyone feels included? 
 connecting with newer players? Take all this feedback into account and make the necessary 
 changes to preserve team culture. 
 **Final Takeaways**
-1.  Team culture is how your team identifies. Are you competitive? Spirited? Just playing 
-for fun? 
-2.  How your team identifies and what your team values should be decided as a team. 
-Everybody's input should be taken into account. Remember, support is important!
-3.  Team bonding. Your team is your family. Get to know each other and have fun together. 
-4.  Regular team check-ins are a good thing. How's the team culture? Are we achieving 
-our goals? Are we practicing our team values? Listen to feedback and make changes if 
-necessary. Remember this is a team and everyone should feel supported and valued. 
-Everyone should feel included!
-In addition to playing on Ozone, I coach the women's varsity ultimate team at Paideia. 
-Paideia Groove is a well established program. Groove has a phenomenal team culture; the best 
-word to describe it is family. I asked a couple of my kids how they defined the team culture 
-on Groove. I wanted to share some of their thoughts and ideas on Groove's team culture.
-*"We were able to recognize each other's strengths and have a good time together 
-because of it." *
-*"Commitment was one of the biggest defining things."*
-*"The balance between goofiness and focus. There are leaders on the team that are 
-weird in an awesome way and that became part of the culture. It's cool when the 
-leadership can be fun too."*
-*"Good balance of competition and support within the team. I strived to work hard 
-because I saw my teammates working hard. I was friends with my teammates so it 
-wasn't hard to want to work and cheer for them." *
-Creating team culture requires input and effort from everyone on the team. And when 
-there is commitment and buy-in to team values and goals, it is easy for everybody to feel 
-welcomed and supported. It is easy for everybody to recognize and believe in their team's 
-culture. So even if your team doesn't have a catchy nickname, your team should be able to 
-come up with an identity and own it. 
+
+1. Team culture is how your team identifies. Are you competitive? Spirited? Just playing 
+   for fun? 
+2. How your team identifies and what your team values should be decided as a team. 
+   Everybody's input should be taken into account. Remember, support is important!
+3. Team bonding. Your team is your family. Get to know each other and have fun together. 
+4. Regular team check-ins are a good thing. How's the team culture? Are we achieving 
+   our goals? Are we practicing our team values? Listen to feedback and make changes if 
+   necessary. Remember this is a team and everyone should feel supported and valued. 
+   Everyone should feel included!
+   In addition to playing on Ozone, I coach the women's varsity ultimate team at Paideia. 
+   Paideia Groove is a well established program. Groove has a phenomenal team culture; the best 
+   word to describe it is family. I asked a couple of my kids how they defined the team culture 
+   on Groove. I wanted to share some of their thoughts and ideas on Groove's team culture.
+   _"We were able to recognize each other's strengths and have a good time together 
+   because of it." _
+   _"Commitment was one of the biggest defining things."_
+   _"The balance between goofiness and focus. There are leaders on the team that are 
+   weird in an awesome way and that became part of the culture. It's cool when the 
+   leadership can be fun too."_
+   _"Good balance of competition and support within the team. I strived to work hard 
+   because I saw my teammates working hard. I was friends with my teammates so it 
+   wasn't hard to want to work and cheer for them." _
+   Creating team culture requires input and effort from everyone on the team. And when 
+   there is commitment and buy-in to team values and goals, it is easy for everybody to feel 
+   welcomed and supported. It is easy for everybody to recognize and believe in their team's 
+   culture. So even if your team doesn't have a catchy nickname, your team should be able to 
+   come up with an identity and own it.
