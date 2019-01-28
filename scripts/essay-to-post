@@ -89,7 +89,9 @@ pdftohtml post.pdf
 popd
 
 # Convert to markdown
-pandoc -r html -w markdown "${ESSAY_DIR}"/posts.html -o "${ESSAY_PATH}" --wrap=preserve --ascii
+pandoc -r html -w markdown --wrap=preserve --ascii "${ESSAY_DIR}"/posts.html -o "${ESSAY_PATH}"
+# Strip unicode whitespace
+perl -i -CSDA -plE 's/\s/ /g' "${ESSAY_PATH}"
 
 clean_essay_text
 get_title_and_author
