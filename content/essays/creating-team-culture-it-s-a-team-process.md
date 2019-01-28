@@ -1,10 +1,13 @@
 ---
-title: "Creating Team Culture: It's a Team Process!"
-author: "Anraya Palmer"
-tags: []
-image: "images/creating-team-culture-it-s-a-team-process-post-3_1.jpg"
-date: 2019-01-28T17:04:14+05:30
+title: 'Creating Team Culture: It''s a Team Process!'
+author: Anraya Palmer
+date: 2019-01-28T11:34:14.000Z
+image: images/creating-team-culture-it-s-a-team-process-post-3_1.jpg
 draft: true
+tags:
+  - tags
+  - bar
+  - foo
 ---
 
 What is team culture and why is it important? What are 
