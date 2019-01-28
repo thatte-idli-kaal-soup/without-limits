@@ -10,6 +10,7 @@ PAGES=${2}
 
 ESSAY_PATH="${ESSAY_DIR}"/post.md
 CONTENT_DIR=$(dirname $0)/../content
+IMAGE_DIR=$(dirname $0)/../static/images
 
 function clean_essay_text () {
     # Get rid of page links
@@ -53,21 +54,21 @@ function slugify () {
 
 function new_post () {
     echo "Creating new post..."
-    POST_DIR="${CONTENT_DIR}"/essays/"${SLUG}"/
-    POST_PATH="${POST_DIR}"/index.md
+    POST_PATH="${CONTENT_DIR}"/essays/"${SLUG}".md
     hugo new "${POST_PATH}"
     tail -n +"${CONTENT_LINES}" "${ESSAY_PATH}" >> "${POST_PATH}"
 }
 
 function copy_images () {
     echo "Copying images..."
-    cp "${ESSAY_DIR}"/*.jpg "${POST_DIR}" || true
+    for each in $(find "${ESSAY_DIR}" -name *.jpg); do
+        cp "${each}" "${IMAGE_DIR}"/"${SLUG}"-$(basename "${each}")
+    done
     first_image_name
 }
 
 function first_image_name () {
     echo "Getting first image..."
-    FIRST_IMAGE=""
     FIRST_IMAGE=$(ls -1 "${ESSAY_DIR}"/*.jpg|head -n 1 || echo "")
     if [ ! -z ${FIRST_IMAGE} ]; then
         FIRST_IMAGE=$(basename "${FIRST_IMAGE}")
@@ -79,9 +80,14 @@ function fix_frontmatter () {
     sed -i -e "s/^\(title: \)\(.*\)$/\1\"${TITLE}\"/g" ${POST_PATH}
     sed -i -e "s/^\(title: .*\)$/\1\nauthor: \"${AUTHOR}\"/g" ${POST_PATH} |head
     if [ ! -z "${FIRST_IMAGE}" ]; then
-        sed -i -e "s/^\(author: .*\)$/\1\nimage: \"essays\/${SLUG}\/${FIRST_IMAGE}\"/g" ${POST_PATH} |head
+        sed -i -e "s/^\(author: .*\)$/\1\nimage: \"images\/${SLUG}-${FIRST_IMAGE}\"/g" ${POST_PATH} |head
     fi
     sed -i -e "s/^\(author: .*\)$/\1\ntags: []/g" ${POST_PATH} |head
+}
+
+function fix_image_links () {
+    # Fix image links
+    sed -i -r "s/\!\[\]\((.*)\)/![](\/images\/${SLUG}-\1)/g" "${POST_PATH}" | grep post
 }
 
 echo $ESSAY_DIR
@@ -105,3 +111,4 @@ slugify
 new_post
 copy_images
 fix_frontmatter
+fix_image_links
